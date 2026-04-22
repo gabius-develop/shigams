@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIGAMS — Clínica de Belleza</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        champagne: '#D4A574',
+                        rose: '#C9A4A0',
+                        ivory: '#F5F0EB',
+                        sand: '#E8DDD3',
+                        espresso: '#3B2F2F',
+                        mocha: '#6B5B5B',
+                        blush: '#F2E6E0',
+                        gold: '#B8956A',
+                        warm: '#A08C7A',
+                    },
+                    fontFamily: {
+                        serif: ['Cormorant Garamond', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-ivory text-espresso font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#hero" class="flex items-center gap-2 group">
+                <span
+                    class="text-2xl md:text-3xl font-serif font-semibold tracking-[0.3em] text-champagne group-hover:text-gold transition-colors">SHIGAMS</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#inicio"
+                    class="nav-link text-sm tracking-widest uppercase font-light hover:text-champagne transition-colors">Inicio</a>
+                <a href="#nosotros"
+                    class="nav-link text-sm tracking-widest uppercase font-light hover:text-champagne transition-colors">Nosotros</a>
+                <a href="#servicios"
+                    class="nav-link text-sm tracking-widest uppercase font-light hover:text-champagne transition-colors">Servicios</a>
+                <a href="#galeria"
+                    class="nav-link text-sm tracking-widest uppercase font-light hover:text-champagne transition-colors">Galería</a>
+                <a href="#testimonios"
+                    class="nav-link text-sm tracking-widest uppercase font-light hover:text-champagne transition-colors">Testimonios</a>
+                <a href="#contacto"
+                    class="nav-link text-sm tracking-widest uppercase font-light hover:text-champagne transition-colors">Contacto</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="md:hidden text-espresso hover:text-champagne transition-colors">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-ivory/98 backdrop-blur-lg border-t border-sand">
+            <div class="px-6 py-6 flex flex-col gap-4">
+                <a href="#inicio"
+                    class="mobile-nav-link text-sm tracking-widest uppercase font-light hover:text-champagne transition-colors py-2">Inicio</a>
+                <a href="#nosotros"
+                    class="mobile-nav-link text-sm tracking-widest uppercase font-light hover:text-champagne transition-colors py-2">Nosotros</a>
+                <a href="#servicios"
+                    class="mobile-nav-link text-sm tracking-widest uppercase font-light hover:text-champagne transition-colors py-2">Servicios</a>
+                <a href="#galeria"
+                    class="mobile-nav-link text-sm tracking-widest uppercase font-light hover:text-champagne transition-colors py-2">Galería</a>
+                <a href="#testimonios"
+                    class="mobile-nav-link text-sm tracking-widest uppercase font-light hover:text-champagne transition-colors py-2">Testimonios</a>
+                <a href="#contacto"
+                    class="mobile-nav-link text-sm tracking-widest uppercase font-light hover:text-champagne transition-colors py-2">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 hero-bg"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-espresso/40 via-espresso/20 to-ivory"></div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+            <p class="text-sand/90 tracking-[0.5em] uppercase text-xs md:text-sm mb-6 font-light animate-fade-up"
+                style="animation-delay: 0.2s">Clínica de Belleza</p>
+            <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl font-light text-white mb-6 tracking-[0.15em] animate-fade-up"
+                style="animation-delay: 0.4s">
+                SHIGAMS
+            </h1>
+            <div class="w-20 h-[1px] bg-champagne mx-auto mb-6 animate-fade-up" style="animation-delay: 0.6s"></div>
+            <p class="text-sand/80 text-lg md:text-xl font-light tracking-wide mb-10 animate-fade-up"
+                style="animation-delay: 0.8s">
+                Donde la belleza y la tranquilidad se encuentran
+            </p>
+            <a href="#servicios"
+                class="inline-block border border-champagne text-champagne px-10 py-3.5 tracking-widest uppercase text-xs hover:bg-champagne hover:text-espresso transition-all duration-500 animate-fade-up"
+                style="animation-delay: 1s">
+                Descubrir
+            </a>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce-slow">
+            <i data-lucide="chevron-down" class="w-5 h-5 text-champagne/60"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="py-24 md:py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+                <div class="relative">
+                    <div class="aspect-[3/4] overflow-hidden rounded-sm">
+                        <img src="http://static.photos/wellness/640x360/88" alt="SHIGAMS Clínica"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                    </div>
+                    <div
+                        class="absolute -bottom-6 -right-6 w-40 h-40 border border-champagne/30 rounded-sm hidden md:block">
+                    </div>
+                    <div
+                        class="absolute -top-6 -left-6 w-24 h-24 border border-champagne/30 rounded-sm hidden md:block">
+                    </div>
+                </div>
+                <div>
+                    <p class="text-champagne tracking-[0.4em] uppercase text-xs mb-4 font-medium">Sobre Nosotros</p>
+                    <h2 class="font-serif text-4xl md:text-5xl font-light mb-8 leading-tight">
+                        Tu refugio de <em class="text-champagne italic">belleza</em> y bienestar
+                    </h2>
+                    <div class="w-12 h-[1px] bg-champagne mb-8"></div>
+                    <p class="text-mocha leading-relaxed mb-6 font-light">
+                        En SHIGAMS, creemos que la belleza verdadera nace de la armonía entre el cuerpo, la mente y el
+                        espíritu. Nuestra clínica es un espacio diseñado para que cada visita sea una experiencia de
+                        renovación integral.
+                    </p>
+                    <p class="text-mocha leading-relaxed mb-8 font-light">
+                        Contamos con profesionales certificados y tecnología de vanguardia para ofrecerte tratamientos
+                        personalizados que realzan tu belleza natural con los más altos estándares de seguridad y
+                        calidad.
+                    </p>
+                    <div class="flex gap-10">
+                        <div>
+                            <span class="font-serif text-3xl text-champagne">10+</span>
+                            <p class="text-xs tracking-widest uppercase text-warm mt-1">Años</p>
+                        </div>
+                        <div>
+                            <span class="font-serif text-3xl text-champagne">5k+</span>
+                            <p class="text-xs tracking-widest uppercase text-warm mt-1">Clientes</p>
+                        </div>
+                        <div>
+                            <span class="font-serif text-3xl text-champagne">9</span>
+                            <p class="text-xs tracking-widest uppercase text-warm mt-1">Servicios</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-24 md:py-32 px-6 bg-blush/50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-champagne tracking-[0.4em] uppercase text-xs mb-4 font-medium">Nuestros Servicios</p>
+                <h2 class="font-serif text-4xl md:text-5xl font-light mb-6">
+                    Tratamientos exclusivos
+                </h2>
+                <div class="w-12 h-[1px] bg-champagne mx-auto"></div>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card group bg-white rounded-sm overflow-hidden cursor-pointer">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="http://static.photos/cosmetic/640x360/10" alt="Cavitación"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-serif text-xl text-espresso group-hover:text-champagne transition-colors">
+                                Cavitación</h3>
+                            <i data-lucide="arrow-up-right"
+                                class="w-4 h-4 text-warm group-hover:text-champagne group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                        </div>
+                        <p class="text-mocha text-sm font-light leading-relaxed">Tratamiento no invasivo que elimina
+                            grasa localizada mediante ultrasonido, moldeando tu figura de manera segura.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card group bg-white rounded-sm overflow-hidden cursor-pointer">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="http://static.photos/wellness/640x360/22" alt="Masaje Relajante"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-serif text-xl text-espresso group-hover:text-champagne transition-colors">
+                                Masaje Relajante</h3>
+                            <i data-lucide="arrow-up-right"
+                                class="w-4 h-4 text-warm group-hover:text-champagne group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                        </div>
+                        <p class="text-mocha text-sm font-light leading-relaxed">Terapia que combina técnicas suaves y
+                            profundas para liberar tensiones y restaurar la armonía corporal.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card group bg-white rounded-sm overflow-hidden cursor-pointer">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="http://static.photos/cosmetic/640x360/35" alt="Radiofrecuencia Corporal"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-serif text-xl text-espresso group-hover:text-champagne transition-colors">
+                                Radiofrecuencia Corporal</h3>
+                            <i data-lucide="arrow-up-right"
+                                class="w-4 h-4 text-warm group-hover:text-champagne group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                        </div>
+                        <p class="text-mocha text-sm font-light leading-relaxed">Reafirma y tonifica la piel estimulando
+                            la producción de colágeno con tecnología de ondas electromagnéticas.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="service-card group bg-white rounded-sm overflow-hidden cursor-pointer">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="http://static.photos/cosmetic/640x360/44" alt="Microneedling Dermapen"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-serif text-xl text-espresso group-hover:text-champagne transition-colors">
+                                Microneedling Dermapen</h3>
+                            <i data-lucide="arrow-up-right"
+                                class="w-4 h-4 text-warm group-hover:text-champagne group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                        </div>
+                        <p class="text-mocha text-sm font-light leading-relaxed">Inducción de colágeno mediante
+                            microagujas que renuevan la textura cutánea, reducen cicatrices y marcas.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="service-card group bg-white rounded-sm overflow-hidden cursor-pointer">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="http://static.photos/wellness/640x360/55" alt="Limpieza Facial Profunda"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-serif text-xl text-espresso group-hover:text-champagne transition-colors">
+                                Limpieza Facial + RF</h3>
+                            <i data-lucide="arrow-up-right"
+                                class="w-4 h-4 text-warm group-hover:text-champagne group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                        </div>
+                        <p class="text-mocha text-sm font-light leading-relaxed">Limpieza profunda con radiofrecuencia
+                            que purifica, nutre y reafirma tu rostro en una sola sesión.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="service-card group bg-white rounded-sm overflow-hidden cursor-pointer">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="http://static.photos/cosmetic/640x360/67" alt="Faciales Personalizados"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-serif text-xl text-espresso group-hover:text-champagne transition-colors">
+                                Faciales Personalizados</h3>
+                            <i data-lucide="arrow-up-right"
+                                class="w-4 h-4 text-warm group-hover:text-champagne group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                        </div>
+                        <p class="text-mocha text-sm font-light leading-relaxed">Tratamientos diseñados exclusivamente
+                            para las necesidades de tu piel, con diagnóstico profesional previo.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 7 -->
+                <div class="service-card group bg-white rounded-sm overflow-hidden cursor-pointer">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="http://static.photos/wellness/640x360/78" alt="Alta Frecuencia Capilar"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-serif text-xl text-espresso group-hover:text-champagne transition-colors">
+                                Alta Frecuencia Capilar</h3>
+                            <i data-lucide="arrow-up-right"
+                                class="w-4 h-4 text-warm group-hover:text-champagne group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                        </div>
+                        <p class="text-mocha text-sm font-light leading-relaxed">Estimulación del cuero cabelludo con
+                            corrientes de alta frecuencia para fortalecer y promover el crecimiento capilar.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 8 -->
+                <div class="service-card group bg-white rounded-sm overflow-hidden cursor-pointer">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="http://static.photos/cosmetic/640x360/89" alt="Botox"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-serif text-xl text-espresso group-hover:text-champagne transition-colors">
+                                Botox</h3>
+                            <i data-lucide="arrow-up-right"
+                                class="w-4 h-4 text-warm group-hover:text-champagne group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                        </div>
+                        <p class="text-mocha text-sm font-light leading-relaxed">Aplicación profesional de toxina
+                            botulínica para suavizar arrugas de expresión con resultados naturales y seguros.</p>
+                    </div>
+                </div>
+
+                <!-- Service Card 9 -->
+                <div class="service-card group bg-white rounded-sm overflow-hidden cursor-pointer">
+                    <div class="aspect-[4/3] overflow-hidden">
+                        <img src="http://static.photos/wellness/640x360/99" alt="Peptonas"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 md:p-8">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="font-serif text-xl text-espresso group-hover:text-champagne transition-colors">
+                                Peptonas</h3>
+                            <i data-lucide="arrow-up-right"
+                                class="w-4 h-4 text-warm group-hover:text-champagne group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+                        </div>
+                        <p class="text-mocha text-sm font-light leading-relaxed">Tratamiento con péptidos bioactivos que
+                            regeneran, hidratan y rejuvenecen la piel desde lo más profundo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parallax Banner -->
+    <section class="relative py-32 md:py-40 overflow-hidden">
+        <div class="absolute inset-0 parallax-bg"></div>
+        <div class="absolute inset-0 bg-espresso/60"></div>
+        <div class="relative z-10 text-center px-6 max-w-3xl mx-auto">
+            <p class="text-champagne/80 tracking-[0.4em] uppercase text-xs mb-6">Experiencia SHIGAMS</p>
+            <h2 class="font-serif text-3xl md:text-5xl text-white font-light leading-snug mb-8">
+                "La belleza es el reflejo de una esencia que habita en cada uno de nosotros"
+            </h2>
+            <div class="w-12 h-[1px] bg-champagne mx-auto"></div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 md:py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-champagne tracking-[0.4em] uppercase text-xs mb-4 font-medium">Galería</p>
+                <h2 class="font-serif text-4xl md:text-5xl font-light mb-6">
+                    Nuestro espacio
+                </h2>
+                <div class="w-12 h-[1px] bg-champagne mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                <div class="aspect-square overflow-hidden rounded-sm col-span-2 row-span-2">
+                    <img src="http://static.photos/wellness/640x360/15" alt="Espacio SHIGAMS"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-sm">
+                    <img src="http://static.photos/cosmetic/320x240/20" alt="Tratamiento facial"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-sm">
+                    <img src="http://static.photos/wellness/320x240/30" alt="Masaje"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-sm">
+                    <img src="http://static.photos/cosmetic/320x240/40" alt="Productos"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-sm">
+                    <img src="http://static.photos/wellness/320x240/50" alt="Resultados"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-sm">
+                    <img src="http://static.photos/indoor/320x240/60" alt="Interior"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-sm">
+                    <img src="http://static.photos/wellness/320x240/70" alt="Relajación"
+                        class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="py-24 md:py-32 px-6 bg-blush/50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-champagne tracking-[0.4em] uppercase text-xs mb-4 font-medium">Testimonios</p>
+                <h2 class="font-serif text-4xl md:text-5xl font-light mb-6">
+                    Lo que dicen nuestras clientas
+                </h2>
+                <div class="w-12 h-[1px] bg-champagne mx-auto"></div>
+            </div>
+
+            <div id="testimonialSlider" class="relative">
+                <div class="testimonial-slide active text-center">
+                    <i data-lucide="quote" class="w-10 h-10 text-champagne/30 mx-auto mb-8"></i>
+                    <p class="font-serif text-xl md:text-2xl text-espresso font-light leading-relaxed mb-8 italic">
+                        "Desde la primera visita, SHIGAMS se convirtió en mi lugar de paz. Los tratamientos son
+                        increíbles y el personal siempre te hace sentir especial."
+                    </p>
+                    <p class="text-champagne tracking-widest uppercase text-sm font-medium">María Fernández</p>
+                    <p class="text-warm text-xs tracking-wider mt-1">Clienta desde 2021</p>
+                </div>
+
+                <div class="testimonial-slide text-center">
+                    <i data-lucide="quote" class="w-10 h-10 text-champagne/30 mx-auto mb-8"></i>
+                    <p class="font-serif text-xl md:text-2xl text-espresso font-light leading-relaxed mb-8 italic">
+                        "Los resultados del microneedling superaron mis expectativas. Mi piel nunca se había visto tan
+                        luminosa y uniforme."
+                    </p>
+                    <p class="text-champagne tracking-widest uppercase text-sm font-medium">Carolina Mendoza</p>
+                    <p class="text-warm text-xs tracking-wider mt-1">Clienta desde 2022</p>
+                </div>
+
+                <div class="testimonial-slide text-center">
+                    <i data-lucide="quote" class="w-10 h-10 text-champagne/30 mx-auto mb-8"></i>
+                    <p class="font-serif text-xl md:text-2xl text-espresso font-light leading-relaxed mb-8 italic">
+                        "El ambiente de tranquilidad y profesionalismo es incomparable. Cada tratamiento es una
+                        experiencia de relajación total."
+                    </p>
+                    <p class="text-champagne tracking-widest uppercase text-sm font-medium">Laura Gutiérrez</p>
+                    <p class="text-warm text-xs tracking-wider mt-1">Clienta desde 2020</p>
+                </div>
+
+                <!-- Navigation Dots -->
+                <div class="flex justify-center gap-3 mt-10">
+                    <button class="testimonial-dot w-2.5 h-2.5 rounded-full bg-champagne transition-all"
+                        data-slide="0"></button>
+                    <button class="testimonial-dot w-2.5 h-2.5 rounded-full bg-warm/40 transition-all"
+                        data-slide="1"></button>
+                    <button class="testimonial-dot w-2.5 h-2.5 rounded-full bg-warm/40 transition-all"
+                        data-slide="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 md:py-28 px-6 bg-white">
+        <div class="max-w-3xl mx-auto text-center">
+            <p class="text-champagne tracking-[0.4em] uppercase text-xs mb-4 font-medium">Agenda tu Cita</p>
+            <h2 class="font-serif text-3xl md:text-5xl font-light mb-6 leading-tight">
+                Tu transformación comienza <em class="text-champagne italic">aquí</em>
+            </h2>
+            <p class="text-mocha font-light mb-10 max-w-xl mx-auto leading-relaxed">
+                Permítenos acompañarte en tu camino hacia la belleza y el bienestar. Agenda tu cita de valoración sin
+                compromiso.
+            </p>
+            <a href="#contacto"
+                class="inline-block bg-champagne text-white px-12 py-4 tracking-widest uppercase text-xs font-medium hover:bg-gold transition-colors duration-300 rounded-sm">
+                Reservar Ahora
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-24 md:py-32 px-6 bg-ivory">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="text-champagne tracking-[0.4em] uppercase text-xs mb-4 font-medium">Contacto</p>
+                <h2 class="font-serif text-4xl md:text-5xl font-light mb-6">
+                    Visítanos
+                </h2>
+                <div class="w-12 h-[1px] bg-champagne mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 md:gap-16">
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center rounded-full border border-champagne/40 shrink-0">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-champagne"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm tracking-widest uppercase text-espresso mb-1 font-medium">Dirección</h4>
+                            <p class="text-mocha font-light text-sm">Av. Principal #123, Col. Centro<br>Ciudad, Estado,
+                                CP 00000</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center rounded-full border border-champagne/40 shrink-0">
+                            <i data-lucide="phone" class="w-4 h-4 text-champagne"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm tracking-widest uppercase text-espresso mb-1 font-medium">Teléfono</h4>
+                            <p class="text-mocha font-light text-sm">+52 (123) 456-7890</p>
+                            <p class="text-mocha font-light text-sm">+52 (123) 456-7891</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center rounded-full border border-champagne/40 shrink-0">
+                            <i data-lucide="mail" class="w-4 h-4 text-champagne"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm tracking-widest uppercase text-espresso mb-1 font-medium">Email</h4>
+                            <p class="text-mocha font-light text-sm">contacto@shigams.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center rounded-full border border-champagne/40 shrink-0">
+                            <i data-lucide="clock" class="w-4 h-4 text-champagne"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-sm tracking-widest uppercase text-espresso mb-1 font-medium">Horario</h4>
+                            <p class="text-mocha font-light text-sm">Lunes a Viernes: 9:00 - 19:00</p>
+                            <p class="text-mocha font-light text-sm">Sábados: 9:00 - 15:00</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4 pt-4">
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full border border-champagne/40 hover:bg-champagne hover:border-champagne group transition-all duration-300">
+                            <i data-lucide="instagram"
+                                class="w-4 h-4 text-champagne group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full border border-champagne/40 hover:bg-champagne hover:border-champagne group transition-all duration-300">
+                            <i data-lucide="facebook"
+                                class="w-4 h-4 text-champagne group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="#"
+                            class="w-10 h-10 flex items-center justify-center rounded-full border border-champagne/40 hover:bg-champagne hover:border-champagne group transition-all duration-300">
+                            <i data-lucide="message-circle"
+                                class="w-4 h-4 text-champagne group-hover:text-white transition-colors"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <form id="contactForm" class="space-y-6">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <label
+                                class="text-xs tracking-widest uppercase text-warm block mb-2 font-medium">Nombre</label>
+                            <input type="text" required
+                                class="w-full bg-transparent border-b border-sand focus:border-champagne outline-none py-2 text-sm font-light text-espresso placeholder:text-warm/50 transition-colors"
+                                placeholder="Tu nombre">
+                        </div>
+                        <div>
+                            <label
+                                class="text-xs tracking-widest uppercase text-warm block mb-2 font-medium">Teléfono</label>
+                            <input type="tel" required
+                                class="w-full bg-transparent border-b border-sand focus:border-champagne outline-none py-2 text-sm font-light text-espresso placeholder:text-warm/50 transition-colors"
+                                placeholder="Tu teléfono">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-xs tracking-widest uppercase text-warm block mb-2 font-medium">Email</label>
+                        <input type="email" required
+                            class="w-full bg-transparent border-b border-sand focus:border-champagne outline-none py-2 text-sm font-light text-espresso placeholder:text-warm/50 transition-colors"
+                            placeholder="Tu email">
+                    </div>
+                    <div>
+                        <label class="text-xs tracking-widest uppercase text-warm block mb-2 font-medium">Servicio de
+                            Interés</label>
+                        <select required
+                            class="w-full bg-transparent border-b border-sand focus:border-champagne outline-none py-2 text-sm font-light text-espresso transition-colors appearance-none cursor-pointer">
+                            <option value="" disabled selected class="text-warm/50">Selecciona un servicio</option>
+                            <option value="cavitacion">Cavitación</option>
+                            <option value="masaje">Masaje Relajante</option>
+                            <option value="radiofrecuencia">Radiofrecuencia Corporal</option>
+                            <option value="microneedling">Microneedling Dermapen</option>
+                            <option value="limpieza">Limpieza Facial + RF</option>
+                            <option value="faciales">Faciales Personalizados</option>
+                            <option value="capilar">Alta Frecuencia Capilar</option>
+                            <option value="botox">Botox</option>
+                            <option value="peptonas">Peptonas</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label
+                            class="text-xs tracking-widest uppercase text-warm block mb-2 font-medium">Mensaje</label>
+                        <textarea rows="4"
+                            class="w-full bg-transparent border-b border-sand focus:border-champagne outline-none py-2 text-sm font-light text-espresso placeholder:text-warm/50 transition-colors resize-none"
+                            placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
+                    </div>
+                    <button type="submit"
+                        class="bg-champagne text-white px-10 py-3.5 tracking-widest uppercase text-xs font-medium hover:bg-gold transition-colors duration-300 rounded-sm w-full sm:w-auto">
+                        Enviar Mensaje
+                    </button>
+                    <div id="formSuccess" class="hidden text-champagne text-sm font-light mt-4">
+                        <span class="flex items-center gap-2">
+                            <i data-lucide="check-circle" class="w-4 h-4"></i>
+                            Mensaje enviado con éxito. Nos pondremos en contacto contigo pronto.
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-espresso text-sand/70 py-16 md:py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-10 mb-14">
+                <div class="sm:col-span-2 md:col-span-1">
+                    <span class="font-serif text-2xl tracking-[0.2em] text-champagne block mb-4">SHIGAMS</span>
+                    <p class="text-sm font-light leading-relaxed">
+                        Clínica de belleza dedicada a realzar tu belleza natural con tratamientos de vanguardia y un
+                        enfoque holístico.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xs tracking-widest uppercase text-champagne mb-4 font-medium">Servicios</h4>
+                    <ul class="space-y-2 text-sm font-light">
+                        <li><a href="#servicios" class="hover:text-champagne transition-colors">Cavitación</a></li>
+                        <li><a href="#servicios" class="hover:text-champagne transition-colors">Masaje Relajante</a>
+                        </li>
+                        <li><a href="#servicios" class="hover:text-champagne transition-colors">Radiofrecuencia</a></li>
+                        <li><a href="#servicios" class="hover:text-champagne transition-colors">Microneedling</a></li>
+                        <li><a href="#servicios" class="hover:text-champagne transition-colors">Botox</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs tracking-widest uppercase text-champagne mb-4 font-medium">Empresa</h4>
+                    <ul class="space-y-2 text-sm font-light">
+                        <li><a href="#nosotros" class="hover:text-champagne transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#galeria" class="hover:text-champagne transition-colors">Galería</a></li>
+                        <li><a href="#testimonios" class="hover:text-champagne transition-colors">Testimonios</a></li>
+                        <li><a href="#contacto" class="hover:text-champagne transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs tracking-widest uppercase text-champagne mb-4 font-medium">Legal</h4>
+                    <ul class="space-y-2 text-sm font-light">
+                        <li><a href="#" class="hover:text-champagne transition-colors">Aviso de Privacidad</a></li>
+                        <li><a href="#" class="hover:text-champagne transition-colors">Términos y Condiciones</a></li>
+                        <li><a href="#" class="hover:text-champagne transition-colors">Política de Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-sand/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs font-light tracking-wider">&copy; 2024 SHIGAMS. Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-champagne transition-colors"><i data-lucide="instagram"
+                            class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-champagne transition-colors"><i data-lucide="facebook"
+                            class="w-4 h-4"></i></a>
+                    <a href="#" class="hover:text-champagne transition-colors"><i data-lucide="message-circle"
+                            class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/521234567890" target="_blank"
+        class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-300 hover:shadow-xl">
+        <i data-lucide="message-circle" class="w-6 h-6 text-white"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
